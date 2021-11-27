@@ -29,9 +29,9 @@ twitter_username: JeffGollnick
 github_username:  FireboltJeff
 
 # Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+remote_theme: pmarsceill/just-the-docs
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
