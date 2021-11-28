@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Getting started
-nav_order: 1
+nav_order: 2
+has_toc: true
 ---
-
 # Getting started tutorial
 
 In this tutorial, you:
@@ -14,7 +14,6 @@ In this tutorial, you:
 
 
 In order to perform this tutorial, you need to have an active Firebolt account. Contact us via `hello@firebolt.io` in order to create one and see Firebolt in action.
-
 
 ## Create your first database
 
@@ -30,7 +29,7 @@ A **Firebolt engine** represents the compute resources that are attached to a da
 
 From the **Databases** page, click **+ New DataBase**. Name your database _**Tutorial**_. Select `us-east-1` as the Database region.
 
-![](<.gitbook/assets/2021-09-13\_9-33-35 (1).png>)
+![](assets/images/2021-09-13_9-33-35.png)
 
 Firebolt provides you by default with a general purpose engine optimized for data ingestion and analytic queries. You can edit the specifications of this engine. For this tutorial, we keep the provided engine as it is.
 
@@ -44,11 +43,11 @@ From the **Database** page, locate the _**Tutorial\_general\_purpose**_ engine n
 
 Go to the **SQL Workspace** page. You will be asked to choose a database:
 
-![](.gitbook/assets/select\_db.png)
+![](assets/images/select_db.png)
 
 Choose the _**Tutorial**_ database from the list. The _**Tutorial\_general\_purpose**_ engine will be used to run the queries on your database. You can always see the engine being used to run your workload in the SQL workspace:
 
-![](.gitbook/assets/2021-09-13\_9-35-31.png)
+![](assets/images/2021-09-13_9-35-31.png)
 
 Click **Run Script** in order to run the following SQL command:
 
@@ -63,7 +62,7 @@ Firebolt returns a list of databases.
 To work with Firebolt, you need to connect to your data sources and ingest that data.\
 Follow these steps to ingest your data into Firebolt:
 
-### **Step 1: Create an external table**
+### Step 1: Create an external table
 
 You will now connect to a public S3 bucket (data source) that contains your parquet files. As part of this tutorial, you will use the Firebolt demo bucket, which contains tables from the TPC-H benchmark.
 
@@ -100,7 +99,6 @@ OBJECT_PATTERN = '*.parquet'
 TYPE = (PARQUET);
 ```
 
-
 **Note**
 
 The Firebolt demo S3 bucket is configured to be accessed publicly, so we do not need to use the`CREDENTIALS`parameter. When you are accessing private data, you will need to use the relevant credentials.
@@ -108,7 +106,7 @@ The Firebolt demo S3 bucket is configured to be accessed publicly, so we do not 
 
 The external table `ex_lineitem` appears on the object panel of the database.
 
-![](.gitbook/assets/2021-09-13\_9-36-53.png)
+![](assets/images/2021-09-13_9-36-53.png)
 
 ### **Step 2: Import data into Firebolt**
 
@@ -147,7 +145,7 @@ CREATE FACT TABLE IF NOT EXISTS lineitem
 
 When successful, the table appears in the object panel of the database, similar to the following:
 
-![](.gitbook/assets/2021-09-13\_9-38-23.png)
+![](assets/images/2021-09-13_9-38-23.png)
 
 You can now use the `INSERT INTO` command to copy the data from the external table into the fact table as follows:
 
@@ -159,11 +157,11 @@ FROM   ex_lineitem;
 
 Following is how it should look when you run the query:
 
-![](.gitbook/assets/2021-09-13\_9-41-38.png)
+![](assets/images/2021-09-13_9-41-38.png)
 
 When the import is completed, the Status column changes to `success`, as follows:
 
-![](.gitbook/assets/2021-09-13\_9-51-18.png)
+![](assets/images/2021-09-13_9-51-18.png)
 
 Now, query the data in the `lineitem` table to verify that the fact table was created successfully:
 
@@ -173,14 +171,11 @@ SELECT * FROM lineitem LIMIT 1000;
 
 Following is how it should look when you run the query:
 
-![](.gitbook/assets/2021-09-13\_9-52-07.png)
+![](assets/images/2021-09-13_9-52-07.png)
 
 ## Configure an aggregating index
 
 For this portion of the tutorial, you will create an _aggregating index_.
-
-
-#### Note
 
 The aggregating index enables you to take a subset of a table's columns and configure aggregations on top of those columns. Many aggregations are supported from the simple sum, max, min to more complex ones such as count and count (distinct). The index is automatically updated and aggregating as new data streams into the table without having to scan the entire table every time since the index is stateful and consistent.
 

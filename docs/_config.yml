@@ -26,10 +26,12 @@ domain: fireboltjeff.github.io
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fireboltjeff.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: JeffGollnick
-github_username:  FireboltJeff
+# github_username:  FireboltJeff
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
+logo: "/assets/images/firebolt.png"
+color_scheme: firebolt
 # plugins:
 #   - jekyll-feed
 

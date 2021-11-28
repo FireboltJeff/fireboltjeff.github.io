@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Architecture overview
-nav_order: 2
+nav_order: 3
 ---
 
 # Architecture overview
 
 The diagram below depicts Firebolt’s high-level architecture, which comprises a services layer and decoupled storage and compute layers. This topic describes each layer.
 
-![Firebolt Architecture](.gitbook/assets/fireboltarchitecture.png)
+![Firebolt Architecture](assets/images/fireboltarchitecture.png)
 
 ## **Services Layer**
 
