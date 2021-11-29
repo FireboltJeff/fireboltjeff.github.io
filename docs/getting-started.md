@@ -22,7 +22,7 @@ To start working with your data, you will need to create a new database and engi
 
 **Note**
 
-A **Firebolt engine** represents the compute resources that are attached to a database for a certain workload. You can choose different engine types based on the workflow you plan on managing. Engines can be scaled up and down even after you’ve set up the initial configuration.
+A *Firebolt engine* represents the compute resources that are attached to a database for a certain workload. You can choose different engine types based on the workflow you plan on managing. Engines can be scaled up and down even after you’ve set up the initial configuration.
 
 
 ### Step 1: Create a new database and engine
@@ -108,7 +108,7 @@ The external table `ex_lineitem` appears on the object panel of the database.
 
 ![](assets/images/2021-09-13_9-36-53.png)
 
-### **Step 2: Import data into Firebolt**
+### Step 2: Import data into Firebolt
 
 In this step, you will create a Firebolt fact table called `lineitem` and then load it with data (_data ingestion_) in order to work with the data from the `ex_lineitem` _external table_.
 
@@ -207,6 +207,6 @@ To help you speed up your queries on this database, you will create a relevant a
 
     When successful, a confirmation message appears below the editor.
 
-From now on, every query for data from the _lineitem_ table that combines any of these fields and aggregations will now use the index you just created instead of the full table in order to run the query and retrieve a response. Read more about aggregating indexes [here](concepts/get-instant-query-response-time.md#get-sub-second-query-response-time-using-aggregating-indexes).
+From now on, every query for data from the *lineitem* table that combines any of these fields and aggregations will now use the index you just created instead of the full table in order to run the query and retrieve a response. Read more about aggregating indexes [here](concepts/get-instant-query-response-time.md#get-sub-second-query-response-time-using-aggregating-indexes).
 
 **Congratulations! You can now use Firebolt to run queries on the demo database!**
